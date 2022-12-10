@@ -1,7 +1,9 @@
 import express, { Router } from "express";
 import { CreateAsesoria, DeleteAsesoria, GetAsesoria, UpdateAsesoria } from "./controller/asesoria.controller";
 import { Citas, CreateCita, DeleteCita, GetCita, UpdateCita } from "./controller/cita.controller";
+import { elementos } from "./controller/elementos.controller";
 import { CreatePerson, DeletePerson, GetPerson, Personas, UpdatePerson } from "./controller/persona.controller";
+import { TipoCasas } from "./controller/tipoCasa";
 import { CreateUsuario, Login, Register } from "./controller/usuario.controller";
 
 export const routes = (router: Router) => {
@@ -33,8 +35,10 @@ export const routes = (router: Router) => {
     router.delete('/api/v1/deleteCita/:id', DeleteCita);
 
     router.post('/api/v1/Contact', CreatePerson);
-     
-    router.get('/api/v1/Projects', Personas);
     
+    //Pruebas feas
+    router.get('/api/v1/TiposCasa', TipoCasas);
+    router.get('/api/v1/elementos/:id', elementos);
+
 
 }
