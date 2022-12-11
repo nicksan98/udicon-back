@@ -11,4 +11,10 @@ export class Asesoria extends BaseEntity {
 
     @Column()
     costo: number;
+
+    @Column()
+    id_cliente: number;
+
+    @Column()
+    id_asesor: number;
 }

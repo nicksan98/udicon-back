@@ -54,7 +54,6 @@ if (error) {
 }
 
 export const Login = async (req: Request, res: Response) => {
-    console.log(req.body);
     const {user_name, password:pass } = req.body
     const usuario = await Usuario.findOneBy ( { user_name })
     if (!usuario || !await bcryptjs.compare(pass, usuario.password)) {
@@ -72,7 +71,8 @@ export const Login = async (req: Request, res: Response) => {
         maxAge: 24 * 60 * 60 * 1000 // one day
     })
     res.send({
-        rol: usuario.user_type
+        rol: usuario.user_type,
+        id: usuario.id_usuario
     });
 }
 

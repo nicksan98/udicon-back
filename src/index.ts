@@ -5,8 +5,8 @@ import app from "./app"
 async function main() {
     try {
         await AppDataSource.initialize()
-        app.listen(8001, () => { 
-            console.log('listening to port 8001')
+        app.listen(8002, () => { 
+            console.log('listening to port 8002')
         })
     } catch ( error ) {
         console.error(error)
