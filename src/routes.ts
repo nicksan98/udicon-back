@@ -4,13 +4,14 @@ import { Citas, CreateCita, DeleteCita, GetCita, UpdateCita } from "./controller
 import { elementos } from "./controller/elementos.controller";
 import { CreatePerson, DeletePerson, GetPerson, Personas, UpdatePerson } from "./controller/persona.controller";
 import { TipoCasas } from "./controller/tipoCasa";
-import { CreateUsuario, Login, Register } from "./controller/usuario.controller";
+import { CreateUsuario, GetUsuario, Login, Register } from "./controller/usuario.controller";
 
 export const routes = (router: Router) => {
     //Personas
     router.get('/api/v1/getPersonas', Personas);
     router.post('/api/v1/createPersona', CreatePerson);
     router.get('/api/v1/getPersona/:id', GetPerson);
+    
     router.put('/api/v1/updatePersona/:id', UpdatePerson);
     router.delete('/api/v1/deletePersona/:id', DeletePerson);
 
@@ -40,5 +41,6 @@ export const routes = (router: Router) => {
     router.get('/api/v1/TiposCasa', TipoCasas);
     router.get('/api/v1/elementos/:id', elementos);
 
+    router.get('/api/v1/Projects', Personas);
 
 }
